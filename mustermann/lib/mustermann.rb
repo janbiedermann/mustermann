@@ -124,10 +124,10 @@ module Mustermann
 end
 
 # :nocov:
-begin
-  require 'mustermann/visualizer' if defined?(Pry) or defined?(IRB)
-rescue LoadError => error
-  raise error unless error.path == 'mustermann/visualizer'
-  $stderr.puts(error.message) if caller_locations[1].absolute_path =~ %r{/lib/pry/|/irb/|^\((?:irb|pry)\)$}
-end
+# begin
+#   require 'mustermann/visualizer' if defined?(Pry) or defined?(IRB)
+# rescue LoadError => error
+#   raise error unless error.path == 'mustermann/visualizer'
+#   $stderr.puts(error.message) if caller_locations[1].absolute_path =~ %r{/lib/pry/|/irb/|^\((?:irb|pry)\)$}
+# end
 # :nocov:

@@ -2,14 +2,14 @@
 require 'mustermann/error'
 require 'mustermann/simple_match'
 require 'mustermann/equality_map'
-require 'uri'
+require 'cgi'
 
 module Mustermann
   # Superclass for all pattern implementations.
   # @abstract
   class Pattern
     include Mustermann
-    @@uri ||= URI::Parser.new
+    # @@uri ||= URI::Parser.new
 
     # List of supported options.
     #
@@ -381,7 +381,7 @@ module Mustermann
     # @!visibility private
     def unescape(string, decode = uri_decode)
       return string unless decode and string
-      @@uri.unescape(string)
+      CGI.unescape(string)
     end
 
     # @!visibility private
